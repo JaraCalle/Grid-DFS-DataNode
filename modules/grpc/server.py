@@ -26,7 +26,5 @@ def serve_grpc():
     pb2_grpc.add_DataNodeServiceServicer_to_server(DataNodeService(), server)
     server.add_insecure_port(f"[::]:{settings.GRPC_PORT}")
     server.start()
-    print(f"[gRPC] DataNode listening on port {settings.GRPC_PORT}")
+    print(f"[gRPC] DataNode {settings.DATANODE_ID} listening on port {settings.GRPC_PORT}")
     server.wait_for_termination()
-
-serve_grpc()
